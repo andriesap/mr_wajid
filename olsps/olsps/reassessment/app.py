@@ -17,9 +17,7 @@ def health_check():
 
 @app.route("/home")
 def home():
-    scores = CoEfficients.query.all()
-    for score in scores:
-        print(score)
+    scores = Score.query.all()
     return render_template("index.html", scores = scores)
 
 @app.route("/getscores")
